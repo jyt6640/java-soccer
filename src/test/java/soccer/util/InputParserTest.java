@@ -6,6 +6,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class InputParserTest {
     private InputParser inputParser;
@@ -30,11 +32,9 @@ public class InputParserTest {
     }
 
     @DisplayName("입력 형식이 올바르지 않으면 예외 발생")
-    @Test
-    void 입력_형식이_올바르지_않으면_예외_발생() {
-        //given
-        String input = "팀A";
-
+    @ValueSource(strings = {"팀A", "팀A A", "", "팀A5", "5 팀A"})
+    @ParameterizedTest
+    void 입력_형식이_올바르지_않으면_예외_발생(String input) {
         //when&then
         assertThatThrownBy(() -> inputParser.parse(input))
                 .isInstanceOf(IllegalArgumentException.class)
