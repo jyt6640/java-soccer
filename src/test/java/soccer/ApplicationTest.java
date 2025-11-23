@@ -13,7 +13,7 @@ class ApplicationTest extends NsTest {
     @Test
     void 기능_테스트() {
         assertSimpleTest(() -> {
-            run("팀A 2, 팀B 1");
+            run("팀A 2", "팀B 1");
             assertThat(output()).contains("팀A 승리");
         });
     }
@@ -21,7 +21,7 @@ class ApplicationTest extends NsTest {
     @Test
     void 예외_테스트() {
         assertSimpleTest(() ->
-            assertThatThrownBy(() -> runException("팀A -1, 팀B 0"))
+            assertThatThrownBy(() -> runException("팀A -1", "팀B 0"))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(ERROR_MESSAGE)
         );
