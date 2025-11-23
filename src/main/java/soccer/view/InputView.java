@@ -9,7 +9,6 @@ public class InputView {
     public void introduceService() {
         System.out.println(INTRODUCE_SERVICE);
         System.out.println(INPUT_TEAM_STATUS);
-        System.out.println();
     }
 
     public String readTeamStatus() {

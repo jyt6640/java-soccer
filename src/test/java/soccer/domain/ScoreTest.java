@@ -2,6 +2,8 @@ package soccer.domain;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
+import static soccer.common.constant.ErrorMessage.INPUT_VALIDATE;
+import static soccer.common.constant.ErrorMessage.MAX_SCORE;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -27,7 +29,7 @@ public class ScoreTest {
         //when&then
         assertThatThrownBy(() -> new Score(input))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("[ERROR] 점수는 음수 일 수 없습니다.");
+                .hasMessageContaining(INPUT_VALIDATE);
     }
 
     @DisplayName("100점 이상 입력 시 예외 발생")
@@ -39,6 +41,6 @@ public class ScoreTest {
         //when&then
         assertThatThrownBy(() -> new Score(input))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("[ERROR] 점수는 100점 이상 일 수 없습니다.");
+                .hasMessageContaining(MAX_SCORE);
     }
 }

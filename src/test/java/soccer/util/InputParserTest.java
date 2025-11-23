@@ -2,6 +2,7 @@ package soccer.util;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
+import static soccer.common.constant.ErrorMessage.INPUT_VALIDATE;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -38,6 +39,6 @@ public class InputParserTest {
         //when&then
         assertThatThrownBy(() -> inputParser.parse(input))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("[ERROR] 입력 형식이 올바르지 않습니다.");
+                .hasMessageContaining(INPUT_VALIDATE);
     }
 }

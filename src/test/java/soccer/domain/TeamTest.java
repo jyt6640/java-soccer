@@ -2,6 +2,7 @@ package soccer.domain;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
+import static soccer.common.constant.ErrorMessage.MAX_TEAM_LENGTH;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -26,6 +27,6 @@ public class TeamTest {
 
         assertThatThrownBy(() -> new Team(input))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("[ERROR] 팀 이름은 10자 미만으로 입력해주세요.");
+                .hasMessageContaining(MAX_TEAM_LENGTH);
     }
 }

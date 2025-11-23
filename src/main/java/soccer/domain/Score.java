@@ -1,5 +1,8 @@
 package soccer.domain;
 
+import static soccer.common.constant.ErrorMessage.MAX_SCORE;
+import static soccer.common.constant.ErrorMessage.MINUS_SCORE;
+
 public class Score {
     private final int score;
 
@@ -19,13 +22,13 @@ public class Score {
 
     private void minusScore(int score) {
         if (score < 0) {
-            throw new IllegalArgumentException("[ERROR] 점수는 음수 일 수 없습니다.");
+            throw new IllegalArgumentException(MINUS_SCORE);
         }
     }
 
     private void maxScore(int score) {
         if (score >= 100) {
-            throw new IllegalArgumentException("[ERROR] 점수는 100점 이상 일 수 없습니다.");
+            throw new IllegalArgumentException(MAX_SCORE);
         }
     }
 }

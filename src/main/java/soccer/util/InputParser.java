@@ -1,5 +1,7 @@
 package soccer.util;
 
+import static soccer.common.constant.ErrorMessage.INPUT_VALIDATE;
+
 public class InputParser {
     private static final String DELIMITER = " ";
     private static final int TEAM_NAME_INDEX = 0;
@@ -15,7 +17,7 @@ public class InputParser {
 
     private void validate(String input) {
         if (!input.matches(INPUT_REGEX)) {
-            throw new IllegalArgumentException("[ERROR] 입력 형식이 올바르지 않습니다.");
+            throw new IllegalArgumentException(INPUT_VALIDATE);
         }
     }
 }

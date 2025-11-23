@@ -10,7 +10,8 @@ public class TeamStatus {
     }
 
     public boolean isWinningAgainst(TeamStatus other) {
-        return this.score.isHigherThan(other.score);
+        return this.score
+                .isHigherThan(other.score);
     }
 
     public String getTeamName() {

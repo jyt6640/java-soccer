@@ -4,6 +4,8 @@ import soccer.domain.TeamStatus;
 import soccer.service.dto.WinnerName;
 
 public class MatchService {
+    private static final String DRAW = "무승부";
+
     private final TeamStatus team1;
     private final TeamStatus team2;
 
@@ -19,6 +21,6 @@ public class MatchService {
         if (team2.isWinningAgainst(team1)) {
             return new WinnerName(team1.getTeamName());
         }
-        return new WinnerName("무승부");
+        return new WinnerName(DRAW);
     }
 }
