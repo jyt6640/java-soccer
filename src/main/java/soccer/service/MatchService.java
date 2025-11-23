@@ -19,7 +19,7 @@ public class MatchService {
             return new WinnerName(team1.getTeamName());
         }
         if (team2.isWinningAgainst(team1)) {
-            return new WinnerName(team1.getTeamName());
+            return new WinnerName(team2.getTeamName());
         }
         return new WinnerName(DRAW);
     }
