@@ -1,11 +1,11 @@
 package soccer;
 
 import camp.nextstep.edu.missionutils.Console;
-import soccer.controller.soccerController;
+import soccer.controller.SoccerController;
 
 public class Application {
     public static void main(String[] args) {
-        soccerController soccerController = new soccerController();
+        SoccerController soccerController = new SoccerController();
         try {
             soccerController.run();
         } finally {

@@ -10,12 +10,12 @@ import soccer.util.MatchInput;
 import soccer.view.InputView;
 import soccer.view.OutputView;
 
-public class soccerController {
+public class SoccerController {
     private final InputView inputView;
     private final OutputView outputView;
     private final InputParser inputParser;
 
-    public soccerController() {
+    public SoccerController() {
         this.inputView = new InputView();
         this.outputView = new OutputView();
         this.inputParser = new InputParser();
