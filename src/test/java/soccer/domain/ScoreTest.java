@@ -29,4 +29,16 @@ public class ScoreTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("[ERROR] 점수는 음수 일 수 없습니다.");
     }
+
+    @DisplayName("100점 이상 입력 시 예외 발생")
+    @Test
+    void 백점_이상_입력_시_예외_발생() {
+        //given
+        int input = 100;
+
+        //when&then
+        assertThatThrownBy(() -> new Score(input))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("[ERROR] 점수는 100점 이상 일 수 없습니다.");
+    }
 }
