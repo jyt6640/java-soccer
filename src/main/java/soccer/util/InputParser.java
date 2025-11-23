@@ -4,7 +4,7 @@ public class InputParser {
     private static final String DELIMITER = " ";
     private static final int TEAM_NAME_INDEX = 0;
     private static final int SCORE_INDEX = 1;
-    private static final String INPUT_REGEX = "^\\S+ \\d+$";
+    private static final String INPUT_REGEX = "^\\S+ -?\\d+$";
 
     public MatchInput parse(String input) {
         validate(input);

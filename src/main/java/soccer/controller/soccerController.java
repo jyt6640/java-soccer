@@ -34,6 +34,7 @@ public class soccerController {
             outputView.printWinner(winnerName.winnerName());
         } catch (IllegalArgumentException e) {
             outputView.printError(e);
+            throw e;
         }
     }
 

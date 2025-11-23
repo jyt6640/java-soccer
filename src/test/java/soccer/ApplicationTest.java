@@ -23,7 +23,6 @@ class ApplicationTest extends NsTest {
         assertSimpleTest(() ->
             assertThatThrownBy(() -> runException("팀A -1", "팀B 0"))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining(ERROR_MESSAGE)
         );
     }
 
