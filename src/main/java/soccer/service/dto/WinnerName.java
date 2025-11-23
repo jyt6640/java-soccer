@@ -1,4 +1,4 @@
-package soccer.domain.dto;
+package soccer.service.dto;
 
 public record WinnerName(String winnerName) {
 }

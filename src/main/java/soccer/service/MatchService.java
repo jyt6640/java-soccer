@@ -1,12 +1,13 @@
-package soccer.domain;
+package soccer.service;
 
-import soccer.domain.dto.WinnerName;
+import soccer.domain.TeamStatus;
+import soccer.service.dto.WinnerName;
 
-public class MatchResult {
+public class MatchService {
     private final TeamStatus team1;
     private final TeamStatus team2;
 
-    public MatchResult(TeamStatus team1, TeamStatus team2) {
+    public MatchService(TeamStatus team1, TeamStatus team2) {
         this.team1 = team1;
         this.team2 = team2;
     }
