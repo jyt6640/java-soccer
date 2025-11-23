@@ -13,6 +13,10 @@ public class Score {
         maxScore(score);
     }
 
+    public boolean isHigherThan (Score other) {
+        return this.score > other.score;
+    }
+
     private void minusScore(int score) {
         if (score < 0) {
             throw new IllegalArgumentException("[ERROR] 점수는 음수 일 수 없습니다.");

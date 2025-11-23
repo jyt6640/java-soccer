@@ -17,4 +17,8 @@ public class Team {
             throw new IllegalArgumentException("[ERROR] 팀 이름은 10자 미만으로 입력해주세요.");
         }
     }
+
+    public String getTeam() {
+        return teamName;
+    }
 }
