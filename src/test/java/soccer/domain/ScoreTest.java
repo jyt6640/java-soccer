@@ -1,6 +1,7 @@
 package soccer.domain;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,5 +16,17 @@ public class ScoreTest {
         //when&then
         assertThatCode(() -> new Score(input))
                 .doesNotThrowAnyException();
+    }
+
+    @DisplayName("음수 값 입력 시 예외 발생")
+    @Test
+    void 음수_값_입력_시_예외_발생() {
+        //given
+        int input = -5;
+
+        //when&then
+        assertThatThrownBy(() -> new Score(input))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("[ERROR] 점수는 음수 일 수 없습니다.");
     }
 }
